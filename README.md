@@ -27,12 +27,24 @@ pythonのバッチで送金を監視し、送金があった場合、指定番�
 お楽しみに
 
 
+
+## コマンド等
+
+アップグレードしてね  
+python3 -m pip install --upgrade pip
+
+必要なライブラリをインストール  
+pip install requests asyncio solana
+
+
+
 ## その他情報
 
-作った人
+Github  
+https://github.com/eyepyon/soltel
+
+作った人  
 https://x.com/masafumiaida
 
 Superteam Japan Earn  
 https://earn.superteam.fun/t/eye/
-
-
