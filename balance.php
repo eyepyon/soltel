@@ -2,9 +2,11 @@
 
 // 転送元電話番号と転送先電話番号
 $fromTel = '+815037337000';
-$toTel = '+818048563939';
+//$toTel = '+818048563939';// iphone
+$toTel = '+818056420444';// android
 
-$target = 0.8;// 転送する残高
+//$target = 0.8;// 転送する残高
+$target = 0.2;// 転送する残高
 // チェックするウォレット
 // $address = 'B9QarUUxxoBktShqdzgKuVZP9DnYTm3ChaggEqTwBF76'; // iPhone
 $address = '4ss8BBTry3isDgALXHMNRoZVDUi96yfBmLEpTkZXFsMK'; // PC
@@ -62,31 +64,33 @@ function telTranceOK($fromTel="", $toTel="")
 }
 function telTranceNG($target=0,$balance=0)
 {
+    print '<Say language="ja-jp" voice="woman">指定の残高に足りないのでお繋ぎすることができません。</Say>';
+    printf('<Say language="ja-jp" voice="woman">指定の残高は %s ソルです。</Say>',$target);
     print '<Say language="ja-jp" voice="woman">現在の残高は</Say>';
     printf('<Say language="ja-jp" voice="woman">%s ソルです。</Say>', $balance);
     print '<Say language="ja-jp" voice="woman">指定の残高まで</Say>';
     $last = $target - $balance;
     printf('<Say language="ja-jp" voice="woman">%s ソルです。</Say>',$last);
+    print '<Say language="ja-jp" voice="woman">頑張って集めてください。健闘を祈ります。</Say>';
     print "</Response>\n";
     exit;
 }
-
 
 header("content-type: text/xml");
 print "<" . "?xml version=\"1.0\" encoding=\"UTF-8\"?" . ">\n";
 
 print "<Response>\n";
 print '<Say language="ja-jp" voice="woman">お電話ありがとうございます。</Say>';
-print '<Say language="ja-jp" voice="woman">ソルテルです。</Say>';
+print '<Say language="ja-jp" voice="woman">ソル・テルです。</Say>';
 
 // 残高を取得
 $balance = getSolanaBalance($address);
 $log = "The balance for address $address is $balance SOL\n";
 $caller = trim($_REQUEST['From']);
 $log .= "Caller: $caller\n";
-error_log($log, 3, "/var/soltel/log/debug.log");
+error_log($log, 3, "/var/www/soltel/log/debug.log");
 
-if($target >= $balance){
+if($target <= $balance){
     telTranceOK($fromTel, $toTel);
 }else{
     telTranceNG($target, $balance);
