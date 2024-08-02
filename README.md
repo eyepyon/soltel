@@ -28,9 +28,8 @@ phpスクリプトで送金を監視し、送金があった場合、指定番�
 
 ## 補足
 
-決勝プレゼン用の素敵な資料は準備中
-決勝プレゼンでみんな楽しめるようにしようかと思います。
-お楽しみに
+プレゼン用資料
+https://www.canva.com/design/DAGMrwdO3B8/F_pYAiXaAPK-At6sznL_jg/view?utm_content=DAGMrwdO3B8&utm_campaign=designshare&utm_medium=link&utm_source=editor
 
 
 ## コマンド等
