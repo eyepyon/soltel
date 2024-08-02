@@ -4,9 +4,12 @@ import asyncio
 from solana.rpc.async_api import AsyncClient
 
 SOLANA_ENDPOINT = 'https://api.mainnet-beta.solana.com'
+#SOLANA_ENDPOINT = 'https://rpc.ankr.com/solana'
 SOL_PROGRAM_ID  = 'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA'
 # 今回は、このウォレットアドレスにしていますが、自分のがあれば書き換えてください！
-SOL_WALLET = 'EDuVpfE29Rb7S9q1bM5Db8WwtqMAPbZb8bqrfNcNt24c'
+#SOL_WALLET = 'EDuVpfE29Rb7S9q1bM5Db8WwtqMAPbZb8bqrfNcNt24c'
+SOL_WALLET = 'B9QarUUxxoBktShqdzgKuVZP9DnYTm3ChaggEqTwBF76'
+#SOL_WALLET = '4ss8BBTry3isDgALXHMNRoZVDUi96yfBmLEpTkZXFsMK'
 
 # connection api server
 async def main():
